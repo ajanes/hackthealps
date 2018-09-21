@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {WeeklyView} from '../model/weekly-view';
 
 @Component({
   selector: 'ga-user-weekly-view',
@@ -6,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
     <p>
       user-weekly-view works!
     </p>
+
+    {{model | json}}
   `,
-  styles: []
+  styles: [],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserWeeklyViewComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  model: WeeklyView;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
