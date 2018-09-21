@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import {AmexioChartsModule, AmexioWidgetModule} from "amexio-ng-extensions";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,10 +15,8 @@ import {AmexioChartsModule, AmexioWidgetModule} from "amexio-ng-extensions";
     CommonModule,
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-
-    AmexioWidgetModule,
-    AmexioChartsModule
 
   ],
   providers: [],
