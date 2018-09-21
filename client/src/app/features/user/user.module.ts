@@ -1,19 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { UserRoutingModule } from './user-routing.module';
-import { UserOverviewPageComponent } from './containers/user-overview-page.component';
-import { UserWeeklyViewComponent } from './components/user-weekly-view.component';
-import { UserDailyViewComponent } from './components/user-daily-view.component';
+import {UserRoutingModule} from './user-routing.module';
+import {UserOverviewPageComponent} from './containers/user-overview-page.component';
+import {UserWeeklyViewComponent} from './components/user-weekly-view.component';
+import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
-import {AmexioChartD3Module, AmexioD3BarChartComponent} from 'amexio-chart-d3';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   imports: [
     CommonModule,
     UserRoutingModule,
 
-    AmexioChartD3Module
+    ChartModule
   ],
   declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent],
   providers: [
