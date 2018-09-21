@@ -6,11 +6,14 @@ import { UserOverviewPageComponent } from './containers/user-overview-page.compo
 import { UserWeeklyViewComponent } from './components/user-weekly-view.component';
 import { UserDailyViewComponent } from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
+import {AmexioChartD3Module, AmexioD3BarChartComponent} from 'amexio-chart-d3';
 
 @NgModule({
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+
+    AmexioChartD3Module
   ],
   declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent],
   providers: [

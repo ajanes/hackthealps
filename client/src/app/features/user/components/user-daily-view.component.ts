@@ -3,10 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ga-user-daily-view',
   template: `
-    <amexio-d3-chart-donut
-      [title]="'My Daily Activity'"
-      [data] = "defultColorData"
-    </amexio-d3-chart-donut>
+    
   `,
   styles: []
 })
