@@ -6,9 +6,9 @@ import {WeeklyView} from '../model/weekly-view';
   template: `
     <p-chart type="bar" [data]="chartData"></p-chart>
 
-    {{chartData | json}}
   `,
-  styles: []
+  styles: [],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserWeeklyViewComponent implements OnChanges, OnInit {
 

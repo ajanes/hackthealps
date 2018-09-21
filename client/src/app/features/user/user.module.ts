@@ -7,13 +7,15 @@ import {UserWeeklyViewComponent} from './components/user-weekly-view.component';
 import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
+import {TabViewModule} from 'primeng/primeng';
 
 @NgModule({
   imports: [
     CommonModule,
     UserRoutingModule,
 
-    ChartModule
+    ChartModule,
+    TabViewModule
   ],
   declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent],
   providers: [
