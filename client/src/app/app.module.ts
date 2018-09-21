@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {AmexioChartsModule, AmexioWidgetModule} from "amexio-ng-extensions";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    AmexioWidgetModule,
+    AmexioChartsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
