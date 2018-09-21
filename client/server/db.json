@@ -1,0 +1,36 @@
+{
+  "person": [
+    {
+      "id": 123,
+      "money-saved": "120",
+      "co2": "105",
+      "competitors": [
+        {
+          "user-id": 124,
+          "money-saved": 121,
+          "co2": "115"
+        },
+        {
+          "user-id": 125,
+          "money-saved": 123,
+          "co2": "117"
+        },
+        {
+          "user-id": 126,
+          "money-saved": 125,
+          "co2": "115"
+        },
+        {
+          "user-id": 127,
+          "money-saved": 118,
+          "co2": "125"
+        },
+        {
+          "user-id": 128,
+          "money-saved": 100,
+          "co2": "95"
+        }
+      ]
+    }
+  ]
+}
