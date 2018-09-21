@@ -100,6 +100,22 @@ public class Main {
 			res.status(400);
 			return new ResponseError("No user with id %s' found", req.params(":id"));
 		}, Utils.json());
+		
+		
+//		http://efa.sta.bz.it/apb/XML_TRIP_REQUEST2/itdDate='23/09/2018'&itdTime='08:00'&origin='Lana'&destination='Bolzano'
+//		http://efa.sta.bz.it/apb/XML_TRIP_REQUEST2?language=de
+		get("/test", (req, res) -> {
+			//TODO to find out how to call this WS
+			String request = "http://efa.sta.bz.it/apb/XML_TRIP_REQUEST2/itdDate='23/09/2018'"
+					+ "&itdTime='08:00'"
+					+ "&origin='Lana'&"
+					+ "destination='Bolzano'&locationServerActive=1&name_test";
+				
+			
+			
+			res.status(400);
+			return new ResponseError("No user with id %s' found", req.params(":id"));
+		}, Utils.json());
 
 	}
 
