@@ -1,4 +1,4 @@
-# Green Alps: Presuasive and Sustainable Mobility
+# Green Alps: Persuasive and Sustainable Mobility
 
 ## Motivation
 South Tyrol is not exluded from global warming. The climate report "Südtirol 2018" confirms that it is crucial to reduce emissions, created by transport and tourism. 
