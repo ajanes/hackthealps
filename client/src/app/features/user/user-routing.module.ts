@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: ':id/timetable',
-    component: TimetableComponent
+    component: TimetableSearchComponent
   },
   {
     path: '**',
