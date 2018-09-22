@@ -21,6 +21,9 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
           <li>
             <a [routerLink]="'/user/' +userId + '/profile'" (click)="close()">Profile</a>
           </li>
+          <li>
+            <a [routerLink]="'/user/' +userId + '/settings'" (click)="close()">Settings</a>
+          </li>
         </ul>
         
       </div>

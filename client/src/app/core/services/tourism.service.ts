@@ -47,13 +47,13 @@ export class TourismService {
   }
 
 
-  getHotels$(): Observable<AccomodationResult> {
+  getHotelsForTvs$(tvsId: string): Observable<AccomodationResult> {
     const url = 'http://tourism.opendatahub.bz.it/api/AccommodationLocalized';
     const params = {
       language: 'en',
       categoryfilter: '16384',
       typefilter: '1',
-      locfilter: 'tvs5228229851CA11D18F1400A02427D15E'
+      locfilter: 'tvs' + tvsId
     };
     const headers = {
       Authorization: 'Bearer ' + this.apiKey
