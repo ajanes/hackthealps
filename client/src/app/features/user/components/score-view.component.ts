@@ -19,9 +19,11 @@ import {Component, Input, OnInit} from '@angular/core';
           <rect id="svg_2" height="31" width="144" y="18.45002" x="149.50002" stroke-width="1.5" stroke="#ffffff" fill="#bf0000"/>
           <line stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="60.49999" x2="149.75004" y1="2.5" x1="149.25004"
                 stroke-width="1.5" stroke="#000000" fill="none"/>
-          <line stroke-linecap="null" stroke-linejoin="null" id="svg_4" y2="148.49996" x2="250.25002" y1="148.99996" x1="250.75001"
+          <line stroke-linecap="null" stroke-linejoin="null" id="svg_4" y2="148.49996" x2="250.25002" 
+                y1="148.99996" x1="250.75001"
                 stroke-width="1.5" stroke="#ffffff" fill="none"/>
-          <line stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="60.49999" x2="176.25003" y1="2.5" x1="175.75003"
+          <line stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="60.49999" x2="176.25003" 
+                y1="2.5" x1="175.75003"
                 stroke-width="1.5" stroke="#000000" fill="none"/>
           <text xml:space="preserve" 
                 text-anchor="start" 
@@ -32,8 +34,14 @@ import {Component, Input, OnInit} from '@angular/core';
           </text>
           <text xml:space="preserve" text-anchor="start" 
                 font-family="Helvetica, Arial, sans-serif" 
-                font-size="24" id="svg_7" y="78.99998" x="164.75004" 
-                stroke-width="0" stroke="#000000" fill="#000000">
+                font-size="12" id="svg_7" y="75" x="160" 
+                stroke-width="0" stroke="#bf0000" fill="#bf0000">
+            you
+          </text>
+          <text xml:space="preserve" text-anchor="start" 
+                font-family="Helvetica, Arial, sans-serif" 
+                font-size="24" id="svg_8" y="75" x="180" 
+                stroke-width="0" stroke="#000000" fill="#bf0000">
             {{currentValue}}
           </text>
         </g>
