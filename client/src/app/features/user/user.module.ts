@@ -7,7 +7,8 @@ import {UserWeeklyViewComponent} from './components/user-weekly-view.component';
 import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
-import {TabViewModule} from 'primeng/primeng';
+import {ButtonModule, TabViewModule} from 'primeng/primeng';
+import { ScoreViewComponent } from './components/score-view.component';
 
 @NgModule({
   imports: [
@@ -15,9 +16,10 @@ import {TabViewModule} from 'primeng/primeng';
     UserRoutingModule,
 
     ChartModule,
-    TabViewModule
+    TabViewModule,
+    ButtonModule
   ],
-  declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent],
+  declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, ScoreViewComponent],
   providers: [
     UserService
   ]
