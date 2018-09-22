@@ -1,6 +1,6 @@
 Project name
 ============
-Green Alps: Presuasive and Sustainable Mobility
+Green Alps: Persuasive and Sustainable Mobility
 
 Challenge
 =========
@@ -13,7 +13,7 @@ Persuading people in South Tyrol to switch to public or muscle-driven mobility
 Description
 ===========
 
-Motivation: South Tyrol is not exluded from global warming. The climate report "Südtirol 2018" confirms that it is crucial to reduce emissions, created by transport and tourism. 
+Motivation: South Tyrol is not excluded from global warming. The climate report "Südtirol 2018" confirms that it is crucial to reduce emissions, created by transport and tourism. 
 
 Problem statement: The goal of this project is to propose a timetable information system with route planning, which is able to suggest to the user alternative, sustainable ways to reach a particular destination.
 
