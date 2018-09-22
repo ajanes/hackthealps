@@ -9,6 +9,7 @@ import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
 import {ButtonModule, TabViewModule} from 'primeng/primeng';
 import { ScoreViewComponent } from './components/score-view.component';
+import { UserProfilePageComponent } from './containers/user-profile-page.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { ScoreViewComponent } from './components/score-view.component';
     TabViewModule,
     ButtonModule
   ],
-  declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, ScoreViewComponent],
+  declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, ScoreViewComponent, UserProfilePageComponent],
   providers: [
     UserService
   ]

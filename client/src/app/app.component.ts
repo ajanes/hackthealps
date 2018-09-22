@@ -1,16 +1,37 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'ga-root',
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
-    <p-toolbar class="top-toolbar">Green South-Tirol</p-toolbar>
+    <p-toolbar>
+      <div class="top-toolbar">
+        <div class="ui-g-2 left">
+          <button pButton (click)="toggleSidebar()" icon="pi pi-bars"></button>
+        </div>
+        <div class="ui-g-8 title">Green Alps</div>
+      </div>
+    </p-toolbar>
+    <ga-side-bar [(visible)]="sidebarVisible"></ga-side-bar>
+    <div class="ui-g">
     <router-outlet></router-outlet>
+    </div>
   `,
   styles: [
-    '.top-toolbar {font-size: 2em; background-color: darkblue !important; margin-bottom: 10px}'
+    '.top-toolbar {font-size: 1.5em; background-color: darkblue !important; margin-bottom: 10px; padding: 0px !important;}',
+    '.top-toolbar button {font-size: 0.5em}',
+    '.toolbar .title {text-align: center}'
   ]
 })
-export class AppComponent {
-  title = 'ga';
+export class AppComponent implements OnInit {
+
+  sidebarVisible: boolean;
+
+  ngOnInit(): void {
+    this.sidebarVisible = false;
+  }
+
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
+  }
 }

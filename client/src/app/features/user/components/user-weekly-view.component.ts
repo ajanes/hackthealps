@@ -6,20 +6,27 @@ import {WeeklyView} from '../model/weekly-view';
   template: `
     <div class="ui-g">
       <div class="ui-g-12">
-      <p-chart type="bar" [data]="chartData"></p-chart>
+        <p-chart type="bar" [data]="chartData" [responsive]="true"></p-chart>
       </div>
       <div class="ui-g-12">
         <ga-score-view [avg]="this.avarage" [currentValue]="currentValue"></ga-score-view>
       </div>
-      <ul>
-        <li>
-        Your daily Avarage is <span [class]="'bad'">{{(currentValue - avarage) | number : '1.1-1'}} g/km </span>
-        <span *ngIf="currentValue > avarage">above</span> the avarage of Bruneck 
-        </li>
-        <li>
-          With reducing you dail car use by <span [class]="'good'">15 km</span> you can gain 10 position in the weekly Bruneck ranking
-        </li>
-      </ul>
+      <div class="ui-g-12">
+        <ul>
+          <li>
+            <div>Your daily Avarage is </div>
+            <div [class]="currentValue > avarage ? 'bad' : 'good'">{{(currentValue - avarage) | number : '1.1-1'}} g/km </div>
+            <div *ngIf="currentValue > avarage">above</div>
+            <div *ngIf="currentValue < avarage">below</div>
+            <div>the avarage of Bruneck</div>
+          </li>
+          <li>
+            <div>With reducing you daily car usage by </div>
+            <div [class]="'good'">15 km</div> 
+            <div>you can gain 10 position in the weekly Bruneck ranking</div>
+          </li>
+        </ul>
+      </div>
       <div class="ui-g-12 center">
         <button pButton label="Suggestions for Tomorrow"></button>
       </div>
