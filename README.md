@@ -1,16 +1,16 @@
 # Green Alps: Presuasive and Sustainable Mobility
 
-#Motivation
+## Motivation
 South Tyrol is not exluded from global warming. The climate report "Südtirol 2018" confirms that it is crucial to reduce emissions, created by transport and tourism. 
 
-#Problem statement
+## Problem statement
 The goal of this project is to propose a timetable information system with route planning, which is able to suggest to the user alternative, sustainable ways to reach a particular destination.
 
-#Approach
+## Approach
 Our approach is self monitoring (showing one's own CO2 consumption data), challenges (daily, weekly,and monthly goals), goal setting (setting targets for CO2 saving), social comparison (comparing one's own performance with others), and personalized suggestions for commuters and tourists. Particularly the last aspect is innovative: the same route is offered in various combinations with different CO2 impacts. Moreover, the user is furthermore persuaded showing money savings when using public or muscle-driven mobility. In addition, the data obtained from monitoring what the user actually chooses (based on his movements) can by used by other stakeholders for their decision making.
 
-#Results
+## Results
 The result of this hackaton is the design and the UI of the features described above. Moreover, the proof of concept contains the necessary code to obtain data from the South Tyrolan Open Data Hub and the Open Street Map. The latter is used to classify the routes on which the user is moving and to predict the CO2 impact. 
 
-#Conclusions
+## Conclusions
 The developed proof of concept demonstrates that the idea is feasible. To estimate the CO2 impact, a user study is needed to evaluate the acceptance of such tool. We estimate the development effort of the here described tool as 12 person months.
