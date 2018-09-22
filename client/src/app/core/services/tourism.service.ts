@@ -4,6 +4,7 @@ import {TsLogin} from '../model/ts-login';
 import {AccomodationResult} from '../model/accomodation-result';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {Accomodation} from '../model/accomodation';
 
 @Injectable({
   providedIn: 'root'
@@ -31,15 +32,18 @@ export class TourismService {
       );
   }
 
-  readHotel$(id: string): Observable<AccomodationResult> {
+  readHotel$(id: string): Observable<Accomodation> {
     const url = 'http://tourism.opendatahub.bz.it/api/AccommodationLocalized';
     const params = {
-      idfilter: 'A2E20883C4B211D19C5D006097AF193B'
+      idfilter: id
     };
     const headers = {
       Authorization: 'Bearer ' + this.apiKey
     };
-    return this.http.get<AccomodationResult>(url, {params: params, headers: headers});
+    return this.http.get<AccomodationResult>(url, {params: params, headers: headers})
+      .pipe(
+        map(value => value.Items[0])
+      );
   }
 
 

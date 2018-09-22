@@ -10,12 +10,19 @@ import {ChartModule} from 'primeng/chart';
 import {AutoCompleteModule, ButtonModule, CalendarModule, CardModule, TabViewModule} from "primeng/primeng";
 import { ScoreViewComponent } from './components/score-view.component';
 import { UserProfilePageComponent } from './containers/user-profile-page.component';
+import {ButtonModule, CardModule, TabViewModule} from 'primeng/primeng';
+import {ScoreViewComponent} from './components/score-view.component';
+import {UserProfilePageComponent} from './containers/user-profile-page.component';
 import {TimetableComponent} from './components/timetable.component';
 import { UserAccomodationPageComponent } from './containers/user-accomodation-page.component';
 import { UserChallengesPageComponent } from './containers/user-challenges-page.component';
 import {TimetableService} from "../../core/services/timetable.service";
 import {TimetableSearchComponent} from "./components/timetable.search.component";
 import {FormsModule} from "@angular/forms";
+import {UserAccomodationPageComponent} from './containers/user-accomodation-page.component';
+import {UserChallengesPageComponent} from './containers/user-challenges-page.component';
+import {UserProfileComponent} from './components/user-profile.component';
+import {AccomodationProfileComponent} from './components/accomodation-profile.component';
 
 @NgModule({
   imports: [
@@ -30,10 +37,23 @@ import {FormsModule} from "@angular/forms";
     FormsModule,
     CalendarModule
   ],
+  declarations: [
+    UserProfilePageComponent,
+    UserOverviewPageComponent,
+    UserWeeklyViewComponent,
+    UserDailyViewComponent,
+    ScoreViewComponent,
+    TimetableComponent,
+    UserAccomodationPageComponent,
+    UserChallengesPageComponent,
+    UserProfileComponent,
+    AccomodationProfileComponent
+  ],
   declarations: [UserProfilePageComponent, UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, ScoreViewComponent,
     TimetableComponent, UserAccomodationPageComponent, UserChallengesPageComponent, TimetableSearchComponent],
   providers: [
     UserService, TimetableService
   ]
 })
-export class UserModule { }
+export class UserModule {
+}

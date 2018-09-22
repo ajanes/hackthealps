@@ -4,35 +4,43 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
   selector: 'ga-side-bar',
   template: `
     <p-sidebar [(visible)]="visible" [baseZIndex]="10000">
-      <div class="ui-g-12">
-        <ul>
+      <div>
+        <ul class="menu">
           <li>
-            <a routerLink="/user/123/dashboard" (click)="close()">Dashboard</a>
+            <a [routerLink]="'/user/' +userId + '/dashboard'" (click)="close()">Dashboard</a>
           </li>
           <li>
-            <a routerLink="/user/123/challenges" (click)="close()">Challenges</a>
+            <a [routerLink]="'/user/' +userId + '/challenges'" (click)="close()">Challenges</a>
           </li>
           <li>
-            <a routerLink="/user/123/accomodation" (click)="close()">Accomodation</a>
+            <a [routerLink]="'/user/' +userId + '/accomodation'" (click)="close()">Accomodation</a>
           </li>
           <li>
-            <a routerLink="/user/123/timetable" (click)="close()">Timetable</a>
+            <a [routerLink]="'/user/' +userId + '/timetable'" (click)="close()">Timetable</a>
           </li>
           <li>
-            <a routerLink="/user/123/profile" (click)="close()">Profile</a>
+            <a [routerLink]="'/user/' +userId + '/profile'" (click)="close()">Profile</a>
           </li>
         </ul>
         
       </div>
     </p-sidebar>
   `,
-  styles: [],
+  styles: [
+    'ul {padding: 0px}',
+    '.ui-sidbar .ui-g-12 {padding: 0px}',
+    '.menu li {background-color: #ededed; border-bottom: #dedede solid 1px; width: 100%; height: 2em; font-size: 1.5em; vertical-align: middle; padding-top: 0.4em; padding-left: 1em}',
+    'li a {color: #7c7c7c; text-decoration: none}'
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideBarComponent implements OnInit {
 
   @Input()
   visible: boolean;
+
+  @Input()
+  userId: string;
 
   @Output()
   visibleChange = new EventEmitter<boolean>()

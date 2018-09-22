@@ -9,28 +9,28 @@ import {TimetableSearchComponent} from "./components/timetable.search.component"
 
 const routes: Routes = [
   {
-    path: '123/dashboard',
+    path: ':id/dashboard',
     component: UserOverviewPageComponent
   },
   {
-    path: '123/profile',
+    path: ':id/profile',
     component: UserProfilePageComponent
   },
   {
-    path: '123/accomodation',
+    path: ':id/accomodation',
     component: UserAccomodationPageComponent
   },
   {
-    path: '123/challenges',
+    path: ':id/challenges',
     component: UserChallengesPageComponent
   },
   {
-    path: '123/timetable',
-    component: TimetableSearchComponent
+    path: ':id/timetable',
+    component: TimetableComponent
   },
   {
     path: '**',
-    redirectTo: '123/dashboard',
+    redirectTo: 'gbuffon/dashboard',
   }
 ];
 
