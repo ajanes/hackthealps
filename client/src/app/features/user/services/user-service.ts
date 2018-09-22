@@ -11,20 +11,20 @@ export class UserService {
   }
 
   getWeeklyView$(): Observable<WeeklyView> {
-    return this.http.get<WeeklyView>('http://localhost:3000/weekly/123');
+    return this.http.get<WeeklyView>('http://172.31.203.131:3000/weekly/123');
     //return this.http.get<WeeklyView>('http://172.31.202.134:4567/fingerprint/person/weekly/1');
   }
 
   getDailyView$(): Observable<any> {
-    return this.http.get('http://localhost:3000/daily');
+    return this.http.get('http://172.31.203.131:3000/daily');
   }
 
 
   getTimetable() {
-    return this.http.get<TimetableModel>('http://localhost:3000/timetable');
+    return this.http.get<TimetableModel>('http://172.31.203.131:3000/timetable');
   }
 
   getStations() {
-    return this.http.get<any>('http://localhost:3000/stations');
+    return this.http.get<any>('http://172.31.203.131:3000/stations');
   }
 }
