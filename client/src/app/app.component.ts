@@ -22,7 +22,7 @@ import {UserProfileService} from './core/services/user-profile.service';
     </div>
   `,
   styles: [
-    '.top-container {position: -webkit-sticky; position: sticky; top: 0;}',
+    '.top-container {position: -webkit-sticky; position: sticky; top: 0; z-index: 5000}',
     '.top-toolbar {font-size: 1.5em; background-color: darkblue !important; margin-bottom: 10px; padding: 0px !important; }',
     '.top-toolbar button {font-size: 0.5em}',
     '.toolbar .title {text-align: center}'
