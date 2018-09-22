@@ -5,6 +5,7 @@ import {UserProfileService} from '../../../core/services/user-profile.service';
 import {Accomodation} from '../../../core/model/accomodation';
 import {Observable} from 'rxjs';
 import {TsActivity} from '../model/ts-activity';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-suggestions-page',
@@ -25,10 +26,12 @@ export class SuggestionsPageComponent implements OnInit {
   activities$: Observable<TsActivity[]>
 
   constructor(private tourismService: TourismService,
+              private labelStoreService: LabelStoreService,
               private userService: UserProfileService) {
   }
 
   ngOnInit() {
+    this.labelStoreService.label = 'Activity proposals'
     this.doSetup = true;
     this.setting = {
       activityType: 1,

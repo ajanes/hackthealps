@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {UserProfile} from './core/model/user-profile';
 import {UserProfileService} from './core/services/user-profile.service';
+import {ActivatedRoute} from '@angular/router';
+import {LabelStoreService} from './core/services/label-store.service';
+import {Label} from './core/model/label';
 
 @Component({
   selector: 'ga-root',
@@ -12,13 +15,13 @@ import {UserProfileService} from './core/services/user-profile.service';
           <div class="ui-g-2 left">
             <button pButton (click)="toggleSidebar()" icon="pi pi-bars"></button>
           </div>
-          <div class="ui-g-8 title">Green Alps</div>
+          <div class="ui-g-10 title">{{label?.text}}</div>
         </div>
       </p-toolbar>
     </div>
     <ga-side-bar [(visible)]="sidebarVisible" [userId]="userProfile.login"></ga-side-bar>
     <div class="ui-g">
-    <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   `,
   styles: [
@@ -34,13 +37,17 @@ export class AppComponent implements OnInit {
 
   userProfile: UserProfile;
 
-  constructor(private userProfileService: UserProfileService) {
+  label: Label;
+
+  constructor(private userProfileService: UserProfileService,
+              private labelStoreService: LabelStoreService) {
 
   }
 
   ngOnInit(): void {
     this.sidebarVisible = false;
     this.userProfile = this.userProfileService.getUserProfile();
+    this.label = this.labelStoreService.getLabel();
   }
 
   toggleSidebar() {

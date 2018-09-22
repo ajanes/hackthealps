@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {Accomodation} from '../../../core/model/accomodation';
 import {map, tap} from 'rxjs/operators';
 import {CompetitorInfo} from '../model/competitor-info';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-user-accomodation-page',
@@ -19,9 +20,11 @@ export class UserAccomodationPageComponent implements OnInit {
   competitors$: Observable<CompetitorInfo[]>;
 
   constructor(private userProfileService: UserProfileService,
+              private labelStoreService: LabelStoreService,
               private tourismService: TourismService) { }
 
   ngOnInit() {
+    this.labelStoreService.label = 'CO2 Accomodation performance';
     const profile = this.userProfileService.getUserProfile();
     this.accomodation$ = this.tourismService.readHotel$(profile.accomodationId)
       .pipe(

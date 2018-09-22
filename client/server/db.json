@@ -166,6 +166,48 @@
       ]
     }
   ],
+  "daily": {
+    "options": {
+      "title": {
+        "display": true,
+        "text": "You saved 5.012 kg of CO² this month",
+        "fontSize": 16
+      },
+      "legend": {
+        "position": "bottom"
+      }
+    },
+    "data": {
+      "labels": [
+        "Car",
+        "Motorcycle",
+        "Train, Bicycle",
+        "None"
+      ],
+      "datasets": [
+        {
+          "data": [
+            12,
+            16,
+            32,
+            25
+          ],
+          "backgroundColor": [
+            "#FF6384",
+            "#36A2EB",
+            "#62D04D",
+            "#D3D3D3"
+          ],
+          "hoverBackgroundColor": [
+            "#FF6384",
+            "#36A2EB",
+            "#62F04D",
+            "#D3F3D3"
+          ]
+        }
+      ]
+    }
+  },
   "stations": [
     {
       "name": "Andriano",

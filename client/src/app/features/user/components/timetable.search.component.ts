@@ -3,33 +3,32 @@ import {UserService} from '../services/user-service';
 import {TimetableModel} from '../model/timetable-model';
 import {TimetableService} from '../../../core/services/timetable.service';
 import {StationModel} from '../model/station.model';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-timetable-search',
   template: `
-    <div class="ui-g ui-fluid" *ngIf="!showResult">
+    <div class="ui-g" *ngIf="!showResult">
       <h3 class="ui-g-12 center">Search transportation</h3>
-      <div class="ui-g-12 ui-md-4">
-        <h3 class="first">From</h3>
+      <div class="ui-g-6 ui-sm-12">
+        <h3>From</h3>
         <p-autoComplete required [(ngModel)]="selectedFromStation" [suggestions]="resultsFrom" field="name"
                         (completeMethod)="searchFrom($event)"></p-autoComplete>
-        <h3 class="first">To</h3>
       </div>
-      <div class="ui-g-12 ui-md-4">
+      <div class="ui-g-6 ui-sm-12">
+        <h3>To</h3>
         <p-autoComplete required="true" [(ngModel)]="selectedToStation" [suggestions]="resultsTo" field="name"
                         (completeMethod)="searchTo($event)"></p-autoComplete>
       </div>
-      <div class="ui-g ui-fluid">
-        <div class="ui-g-12 ui-md-4">
-          <h3>Time</h3>
-          <p-calendar [(ngModel)]="dateTime" [showTime]="true"></p-calendar>
-        </div>
+      <div class="ui-g-6 ui-sm-12">
+        <h3>Time</h3>
+        <p-calendar [(ngModel)]="dateTime" [showTime]="true"></p-calendar>
       </div>
-      <div class="ui-g-12 ui-md-4">
+      <div class="ui-g-6 ui-sm-12">
         <h3 class="first">#Results: {{limit}}</h3>
         <p-slider [(ngModel)]="limit" [style]="{'width':'14em'}" [max]="20"></p-slider>
       </div>
-      <div class="ui-g-12 ui-md-4 btn">
+      <div class="ui-g-12 btn">
         <p-button (onClick)="showResult = true" [disabled]="!(selectedFromStation && selectedToStation && dateTime)"
                   label="Search"></p-button>
       </div>
@@ -60,11 +59,13 @@ export class TimetableSearchComponent implements OnInit {
   showResult = false;
 
   constructor(private userService: UserService,
+              private labelStoreService: LabelStoreService,
               private timetableService: TimetableService) {
   }
 
   ngOnInit() {
     this.limit = 4;
+    this.labelStoreService.label = 'Search for green Transports';
   }
 
   searchFrom(event): void {

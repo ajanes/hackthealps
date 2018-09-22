@@ -4,6 +4,7 @@ import {TourismService} from '../../../core/services/tourism.service';
 import {UserProfile} from '../../../core/model/user-profile';
 import {Accomodation} from '../../../core/model/accomodation';
 import {Observable} from 'rxjs';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-user-profile-page',
@@ -21,9 +22,11 @@ export class UserProfilePageComponent implements OnInit {
   accomodation$: Observable<Accomodation>;
 
   constructor(private userProfileService: UserProfileService,
+              private labelStoreService: LabelStoreService,
               private tourismService: TourismService) { }
 
   ngOnInit() {
+    this.labelStoreService.label = 'Profile';
     this.userProfile = this.userProfileService.getUserProfile();
     this.accomodation$ = this.tourismService.readHotel$(this.userProfile.accomodationId);
   }

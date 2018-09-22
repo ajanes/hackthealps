@@ -6,7 +6,7 @@ import {WeeklyView} from '../model/weekly-view';
   template: `
     <div class="ui-g">
       <div class="ui-g-12">
-        <p-chart type="bar" [data]="chartData" [responsive]="true"></p-chart>
+        <p-chart type="bar" [data]="chartData" [responsive]="true" [height]="'150px'"></p-chart>
       </div>
       <div class="ui-g-12">
         <ga-score-view [avg]="this.avarage" [currentValue]="currentValue"></ga-score-view>
