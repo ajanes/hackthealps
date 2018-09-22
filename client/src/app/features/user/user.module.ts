@@ -8,6 +8,8 @@ import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
 import {TabViewModule} from 'primeng/primeng';
+import {TimetableComponent} from "./components/timetable.component";
+import {CardModule} from "primeng/card";
 
 @NgModule({
   imports: [
@@ -15,9 +17,10 @@ import {TabViewModule} from 'primeng/primeng';
     UserRoutingModule,
 
     ChartModule,
+    CardModule,
     TabViewModule
   ],
-  declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent],
+  declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, TimetableComponent],
   providers: [
     UserService
   ]

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {UserOverviewPageComponent} from './containers/user-overview-page.component';
+import {TimetableComponent} from "./components/timetable.component";
 
 const routes: Routes = [
   {
@@ -8,8 +9,12 @@ const routes: Routes = [
     component: UserOverviewPageComponent
   },
   {
+    path: 'timetable',
+    component: TimetableComponent
+  },
+  {
     path: '**',
-    redirectTo: '123'
+    redirectTo: 'timetable'
   }
 ];
 
