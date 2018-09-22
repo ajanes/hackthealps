@@ -18,6 +18,7 @@ import {UserAccomodationPageComponent} from './containers/user-accomodation-page
 import {UserChallengesPageComponent} from './containers/user-challenges-page.component';
 import {UserProfileComponent} from './components/user-profile.component';
 import {AccomodationProfileComponent} from './components/accomodation-profile.component';
+import {SliderModule} from 'primeng/slider';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import {AccomodationProfileComponent} from './components/accomodation-profile.co
     TabViewModule,
     ButtonModule,
     AutoCompleteModule,
+    SliderModule,
     FormsModule,
     CalendarModule
   ],

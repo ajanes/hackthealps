@@ -1,11 +1,11 @@
-import {Component, OnInit} from "@angular/core";
-import {UserService} from "../services/user-service";
-import {TimetableModel} from "../model/timetable-model";
-import {TimetableService} from "../../../core/services/timetable.service";
-import {StationModel} from "../model/station.model";
+import {Component, OnInit} from '@angular/core';
+import {UserService} from '../services/user-service';
+import {TimetableModel} from '../model/timetable-model';
+import {TimetableService} from '../../../core/services/timetable.service';
+import {StationModel} from '../model/station.model';
 
 @Component({
-  selector: "ga-timetable-search",
+  selector: 'ga-timetable-search',
   template: `
     <div class="ui-g ui-fluid" *ngIf="!showResult">
       <h3 class="ui-g-12 center">Search transportation</h3>
@@ -25,6 +25,10 @@ import {StationModel} from "../model/station.model";
           <p-calendar [(ngModel)]="dateTime" [showTime]="true"></p-calendar>
         </div>
       </div>
+      <div class="ui-g-12 ui-md-4">
+        <h3 class="first">#Results: {{limit}}</h3>
+        <p-slider [(ngModel)]="limit" [style]="{'width':'14em'}" [max]="20"></p-slider>
+      </div>
       <div class="ui-g-12 ui-md-4 btn">
         <p-button (onClick)="showResult = true" [disabled]="!(selectedFromStation && selectedToStation && dateTime)"
                   label="Search"></p-button>
@@ -36,11 +40,12 @@ import {StationModel} from "../model/station.model";
         [to]="selectedToStation"
         [dateTime]="dateTime"
         [(display)]="showResult"
+        [limit]="limit"
       ></ga-timetable>
     </div>
   `,
-  styles: [".btn {text-align: center; padding: 2em}",
-    ".center {text-align: center; padding: 0}"]
+  styles: ['.btn {text-align: center; padding: 2em}',
+    '.center {text-align: center; padding: 0}']
 })
 export class TimetableSearchComponent implements OnInit {
 
@@ -50,6 +55,7 @@ export class TimetableSearchComponent implements OnInit {
   selectedToStation: StationModel;
 
   dateTime: any;
+  limit: number;
 
   showResult = false;
 
@@ -58,6 +64,7 @@ export class TimetableSearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.limit = 4;
   }
 
   searchFrom(event): void {
