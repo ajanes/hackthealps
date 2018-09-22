@@ -45,7 +45,10 @@
         "transfers": 1,
         "money_saved": -14,
         "co2_saved": -3.5,
-        "transportation_means": ["directions_bus", "train"],
+        "transportation_means": [
+          "directions_bus",
+          "train"
+        ],
         "color": "green"
       },
       {
@@ -55,7 +58,9 @@
         "transfers": 0,
         "money_saved": -12,
         "co2_saved": -1,
-        "transportation_means": ["train"],
+        "transportation_means": [
+          "train"
+        ],
         "color": "yellow"
       },
       {
@@ -65,7 +70,10 @@
         "transfers": 1,
         "money_saved": -0.5,
         "co2_saved": 0,
-        "transportation_means": ["directions_bus", "directions_car"],
+        "transportation_means": [
+          "directions_bus",
+          "directions_car"
+        ],
         "color": "red"
       }
     ]
@@ -73,25 +81,111 @@
   "weekly": [
     {
       "id": 123,
-      "money_saved": [1,2,3,4,5,6,7],
-      "co2": [1,2,3,4,5,6,7],
+      "money_saved": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "co2": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
       "competitors": [
         {
           "id": 124,
-          "money_saved": [1,2,3,4,5,6,7],
-          "co2": [1,2,3,4,5,6,7]
+          "money_saved": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "co2": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
         },
         {
           "id": 125,
-          "money_saved": [1,2,3,4,5,6,7],
-          "co2": [1,2,3,4,5,6,7]
+          "money_saved": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "co2": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
         },
         {
           "id": 126,
-          "money_saved": [1,2,3,4,5,6,7],
-          "co2": [1,2,3,4,5,6,7]
+          "money_saved": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "co2": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
         }
       ]
+    }
+  ],
+  "stations": [
+    {
+      "name": "Andriano",
+      "key": "9741"
+    },
+    {
+      "name": "Avlengo",
+      "key": "658"
+    },
+    {
+      "name": "Bolzano",
+      "key": "1096"
+    },
+    {
+      "name": "Bronzolo",
+      "key": "873"
+    },
+    {
+      "name": "Lana",
+      "key": "489"
     }
   ]
 }

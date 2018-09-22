@@ -1,6 +1,8 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from "@angular/core";
 import {UserService} from "../services/user-service";
 import {TimetableModel} from "../model/timetable-model";
+import {TimetableService} from "../../../core/services/timetable.service";
+import {StationModel} from "../model/station.model";
 
 @Component({
   selector: "ga-timetable",
@@ -27,14 +29,43 @@ import {TimetableModel} from "../model/timetable-model";
         </div>
       </div>
     </p-card>
+    <div class="ui-g ui-fluid" >
+      <div class="ui-g-12 ui-md-4 btn">
+        <p-button (onClick)="displayChange.emit(false)" label="Back"></p-button>
+      </div>
+    </div>
   `,
-  styles: []
+  styles: ['.btn {text-align: center; padding: 2em}']
 })
-export class TimetableComponent implements OnInit {
+export class TimetableComponent implements OnInit, OnChanges {
+
+  @Input()
+  private from: StationModel;
+
+  @Input()
+  private to: StationModel;
+
+  @Input()
+  private dateTime: any;
+
+  @Input() display: boolean;
+
+  @Output() displayChange: EventEmitter<boolean> = new EventEmitter();
 
   timetable: TimetableModel;
 
-  constructor(private userService: UserService) {
+
+  constructor(private userService: UserService,
+              private timetableService: TimetableService) {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.from && this.to && this.dateTime) {
+      let url = "http://stationboard.opensasa.info/?type=json&LINES=20";
+      url += "&ORT_NR=" + this.from.key;
+      this.timetableService.getTimetable(url).subscribe(t => this.timetable.from = t.stationname);
+    }
+
   }
 
   ngOnInit() {
@@ -53,8 +84,11 @@ export class TimetableComponent implements OnInit {
           transportation_means: [],
           color: undefined,
         }]
-  }
+    };
     this.userService.getTimetable().subscribe(t => this.timetable = t);
   }
+
+
+
 
 }
