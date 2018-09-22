@@ -16,7 +16,7 @@ import {UserProfileService} from './core/services/user-profile.service';
         </div>
       </p-toolbar>
     </div>
-    <ga-side-bar [(visible)]="sidebarVisible"></ga-side-bar>
+    <ga-side-bar [(visible)]="sidebarVisible" [userId]="userProfile.login"></ga-side-bar>
     <div class="ui-g">
     <router-outlet></router-outlet>
     </div>
