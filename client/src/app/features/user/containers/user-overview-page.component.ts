@@ -18,8 +18,7 @@ import {WeeklyView} from '../model/weekly-view';
         Not yet implemented
       </p-tabPanel>
     </p-tabView>
-    
-        
+     
   `,
   styles: []
 })

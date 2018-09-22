@@ -28,7 +28,7 @@ import {WeeklyView} from '../model/weekly-view';
         </ul>
       </div>
       <div class="ui-g-12 center">
-        <button pButton label="Suggestions for Tomorrow"></button>
+        <button pButton label="Suggestions for Tomorrow" routerLink="../suggestions"></button>
       </div>
       
     </div>
@@ -60,7 +60,7 @@ export class UserWeeklyViewComponent implements OnChanges, OnInit {
         labels: ['Mo', 'Th', 'We', 'Th', 'Fr', 'Sa', 'Su'],
         datasets: [
           {
-            label: 'My Footprint',
+            label: 'Your Performance',
             backgroundColor: '#6bf54d',
             borderColor: '#55f535',
             data: this.model.co2
@@ -75,7 +75,7 @@ export class UserWeeklyViewComponent implements OnChanges, OnInit {
         ]
       };
 
-      this.avarage = 25;
+      this.avarage = 32;
       this.currentValue = this.model.co2.reduce((a, b) => a + b, 0) / 7;
     }
   }

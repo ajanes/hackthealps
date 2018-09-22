@@ -5,6 +5,9 @@ import {AccomodationResult} from '../model/accomodation-result';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Accomodation} from '../model/accomodation';
+import {SuggestionSetting} from '../../features/user/model/suggestion-setting';
+import {TsActivity} from '../../features/user/model/ts-activity';
+import {TsActivityResult} from '../../features/user/model/ts-activity-result';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +62,27 @@ export class TourismService {
       Authorization: 'Bearer ' + this.apiKey
     };
     return this.http.get<AccomodationResult>(url, {params: params, headers: headers});
+  }
+
+  findActivities(setting: SuggestionSetting, regionId: string): Observable<TsActivity[]> {
+    const url = 'http://tourism.opendatahub.bz.it/api/Activity';
+    const params = {
+      activitytype: String(setting.activityType),
+      difficultyfilter: String(setting.difficulty),
+      distancefilter: '0,' + setting.maxDistance,
+      locfilter: 'reg' + regionId
+    };
+    const headers = {
+      Authorization: 'Bearer ' + this.apiKey
+    };
+    return this.http.get<TsActivityResult>(url, {params: params, headers: headers})
+      .pipe(
+        map(value => {
+          console.log('length:' + value.Items.length);
+          return value.Items;
+        })
+      );
+
   }
 
 }
