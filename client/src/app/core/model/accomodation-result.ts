@@ -6,5 +6,5 @@ export interface AccomodationResult {
   CurrentPage: number;
   OnlineResults: number;
   Seed: number;
-  items: Accomodation
+  Items: Accomodation;
 }

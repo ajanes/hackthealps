@@ -8,11 +8,13 @@ import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
 import {ButtonModule, CardModule, TabViewModule} from 'primeng/primeng';
-import { ScoreViewComponent } from './components/score-view.component';
-import { UserProfilePageComponent } from './containers/user-profile-page.component';
+import {ScoreViewComponent} from './components/score-view.component';
+import {UserProfilePageComponent} from './containers/user-profile-page.component';
 import {TimetableComponent} from './components/timetable.component';
-import { UserAccomodationPageComponent } from './containers/user-accomodation-page.component';
-import { UserChallengesPageComponent } from './containers/user-challenges-page.component';
+import {UserAccomodationPageComponent} from './containers/user-accomodation-page.component';
+import {UserChallengesPageComponent} from './containers/user-challenges-page.component';
+import {UserProfileComponent} from './components/user-profile.component';
+import {AccomodationProfileComponent} from './components/accomodation-profile.component';
 
 @NgModule({
   imports: [
@@ -24,9 +26,21 @@ import { UserChallengesPageComponent } from './containers/user-challenges-page.c
     TabViewModule,
     ButtonModule
   ],
-  declarations: [UserProfilePageComponent, UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, ScoreViewComponent, TimetableComponent, UserAccomodationPageComponent, UserChallengesPageComponent],
+  declarations: [
+    UserProfilePageComponent,
+    UserOverviewPageComponent,
+    UserWeeklyViewComponent,
+    UserDailyViewComponent,
+    ScoreViewComponent,
+    TimetableComponent,
+    UserAccomodationPageComponent,
+    UserChallengesPageComponent,
+    UserProfileComponent,
+    AccomodationProfileComponent
+  ],
   providers: [
     UserService
   ]
 })
-export class UserModule { }
+export class UserModule {
+}

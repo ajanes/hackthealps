@@ -1,19 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import {UserProfileService} from '../../../core/services/user-profile.service';
+import {TourismService} from '../../../core/services/tourism.service';
+import {UserProfile} from '../../../core/model/user-profile';
+import {Accomodation} from '../../../core/model/accomodation';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'ga-user-profile-page',
   template: `
-    <p>
-      user-profile-page works!
-    </p>
+    <h1>User</h1>
+    <ga-user-profile [userProfile]="userProfile"></ga-user-profile>
+    <h1>Accomodation</h1>
+    <ga-accomodation-profile [accomodation]="accomodation$ | async"></ga-accomodation-profile>
   `,
   styles: []
 })
 export class UserProfilePageComponent implements OnInit {
 
-  constructor() { }
+  userProfile: UserProfile;
+  accomodation$: Observable<Accomodation>;
+
+  constructor(private userProfileService: UserProfileService,
+              private tourismService: TourismService) { }
 
   ngOnInit() {
+    this.userProfile = this.userProfileService.getUserProfile();
+    this.accomodation$ = this.tourismService.readHotel$(this.userProfile.accomodationId);
   }
 
 }

@@ -1,3 +1,5 @@
+import {ImageGallery} from './image-gallery';
+
 export interface Accomodation {
       Id: string;
       HgvId: string;
@@ -33,4 +35,5 @@ export interface Accomodation {
       SpecialFeaturesIds: [
         string
       ];
+      ImageGallery: ImageGallery[];
     }
