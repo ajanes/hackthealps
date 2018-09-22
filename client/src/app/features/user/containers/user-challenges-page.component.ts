@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'ga-user-chalanges-page',
   template: `
     <p>
-      user-chalanges-page works!
+      Not yet implemented
     </p>
-  `,
+      `,
   styles: []
 })
 export class UserChallengesPageComponent implements OnInit {

@@ -7,7 +7,7 @@ import {UserWeeklyViewComponent} from './components/user-weekly-view.component';
 import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
-import {ButtonModule, CardModule, TabViewModule} from 'primeng/primeng';
+import {ButtonModule, CardModule, GMapModule, TabViewModule} from 'primeng/primeng';
 import {ScoreViewComponent} from './components/score-view.component';
 import {UserProfilePageComponent} from './containers/user-profile-page.component';
 import {TimetableComponent} from './components/timetable.component';
@@ -15,6 +15,7 @@ import {UserAccomodationPageComponent} from './containers/user-accomodation-page
 import {UserChallengesPageComponent} from './containers/user-challenges-page.component';
 import {UserProfileComponent} from './components/user-profile.component';
 import {AccomodationProfileComponent} from './components/accomodation-profile.component';
+import { CompetitorViewComponent } from './components/competitor-view.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import {AccomodationProfileComponent} from './components/accomodation-profile.co
     ChartModule,
     CardModule,
     TabViewModule,
-    ButtonModule
+    ButtonModule,
+    GMapModule
   ],
   declarations: [
     UserProfilePageComponent,
@@ -36,7 +38,8 @@ import {AccomodationProfileComponent} from './components/accomodation-profile.co
     UserAccomodationPageComponent,
     UserChallengesPageComponent,
     UserProfileComponent,
-    AccomodationProfileComponent
+    AccomodationProfileComponent,
+    CompetitorViewComponent
   ],
   providers: [
     UserService
