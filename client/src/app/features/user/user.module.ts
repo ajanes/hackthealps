@@ -45,6 +45,7 @@ import { SuggestionsListComponent } from './components/suggestions-list.componen
     ButtonModule,
     ButtonModule,
     AutoCompleteModule,
+    SliderModule,
     FormsModule,
     CalendarModule,
     SliderModule,
