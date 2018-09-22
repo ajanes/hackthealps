@@ -20,7 +20,6 @@ import {FormsModule} from '@angular/forms';
 import {TimetableSearchComponent} from './components/timetable.search.component';
 import {TimetableService} from '../../core/services/timetable.service';
 import { UserSettingsComponent } from './containers/user-settings.component';
-import {SliderModule} from 'primeng/slider';
 
 @NgModule({
   imports: [

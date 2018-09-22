@@ -64,7 +64,7 @@ export class TimetableComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.from && this.to && this.dateTime) {
-      const url = 'http://stationboard.opensasa.info/?type=json&LINES=999&ORT_NR=' + this.from.key;
+      const url = 'http://cors-anywhere.herokuapp.com/http://stationboard.opensasa.info/?type=json&LINES=999&ORT_NR=' + this.from.key;
       this.timetableService.getTimetable(url).subscribe(tableResponse => {
         if (tableResponse.rides.length > 0) {
           this.timetable = {
