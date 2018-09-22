@@ -3,6 +3,7 @@ import {ViewType} from '../model/view-type';
 import {UserService} from '../services/user-service';
 import {Observable} from 'rxjs';
 import {WeeklyView} from '../model/weekly-view';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-user-overview-page',
@@ -27,9 +28,11 @@ export class UserOverviewPageComponent implements OnInit {
   viewType: ViewType;
   weeklyView$: Observable<WeeklyView>;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private labelStoreService: LabelStoreService) { }
 
   ngOnInit() {
+    this.labelStoreService.label = 'Your personal CO2 performance';
     this.viewType = ViewType.WEEKLY;
     this.weeklyView$ = this.userService.getWeeklyView$();
   }

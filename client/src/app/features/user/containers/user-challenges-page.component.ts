@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-user-chalanges-page',
@@ -11,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserChallengesPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private labelStoreService: LabelStoreService) { }
 
   ngOnInit() {
+    this.labelStoreService.label = 'Join open Challenges';
   }
 
 }

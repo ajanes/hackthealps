@@ -12,7 +12,7 @@ import {SuggestionsPageComponent} from './containers/suggestions-page.component'
 const routes: Routes = [
   {
     path: ':id/dashboard',
-    component: UserOverviewPageComponent
+    component: UserOverviewPageComponent,
   },
   {
     path: ':id/profile',

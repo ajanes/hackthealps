@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserProfileService} from '../../../core/services/user-profile.service';
 import {UserSetting} from '../../../core/model/user-setting';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-user-settings',
@@ -40,9 +41,11 @@ export class UserSettingsComponent implements OnInit {
 
   setting: UserSetting;
 
-  constructor(private userProfileService: UserProfileService) { }
+  constructor(private userProfileService: UserProfileService,
+              private labelStoreService: LabelStoreService) { }
 
   ngOnInit() {
+    this.labelStoreService.label = 'Your personal settings'
     this.setting = this.userProfileService.getUserSetting();
   }
 
