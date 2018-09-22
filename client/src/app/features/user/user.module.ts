@@ -7,7 +7,17 @@ import {UserWeeklyViewComponent} from './components/user-weekly-view.component';
 import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
-import {AutoCompleteModule, ButtonModule, CalendarModule, CardModule, CheckboxModule, SliderModule, TabViewModule} from 'primeng/primeng';
+import {
+  AccordionModule,
+  AutoCompleteModule,
+  ButtonModule,
+  CalendarModule,
+  CardModule,
+  CheckboxModule,
+  DropdownModule,
+  SliderModule,
+  TabViewModule
+} from 'primeng/primeng';
 import {ScoreViewComponent} from './components/score-view.component';
 import {UserProfilePageComponent} from './containers/user-profile-page.component';
 import {TimetableComponent} from './components/timetable.component';
@@ -20,6 +30,9 @@ import {FormsModule} from '@angular/forms';
 import {TimetableSearchComponent} from './components/timetable.search.component';
 import {TimetableService} from '../../core/services/timetable.service';
 import { UserSettingsComponent } from './containers/user-settings.component';
+import { SuggestionsPageComponent } from './containers/suggestions-page.component';
+import { SuggestionsSetupComponent } from './components/suggestions-setup.component';
+import { SuggestionsListComponent } from './components/suggestions-list.component';
 
 @NgModule({
   imports: [
@@ -36,7 +49,9 @@ import { UserSettingsComponent } from './containers/user-settings.component';
     FormsModule,
     CalendarModule,
     SliderModule,
-    CheckboxModule
+    CheckboxModule,
+    DropdownModule,
+    AccordionModule
   ],
   declarations: [
     UserProfilePageComponent,
@@ -52,7 +67,10 @@ import { UserSettingsComponent } from './containers/user-settings.component';
     CompetitorViewComponent,
     AccomodationProfileComponent,
     TimetableSearchComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    SuggestionsPageComponent,
+    SuggestionsSetupComponent,
+    SuggestionsListComponent
   ],
   providers: [
     UserService, TimetableService

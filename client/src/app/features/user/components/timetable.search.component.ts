@@ -3,6 +3,7 @@ import {UserService} from '../services/user-service';
 import {TimetableModel} from '../model/timetable-model';
 import {TimetableService} from '../../../core/services/timetable.service';
 import {StationModel} from '../model/station.model';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-timetable-search',
@@ -58,11 +59,13 @@ export class TimetableSearchComponent implements OnInit {
   showResult = false;
 
   constructor(private userService: UserService,
+              private labelStoreService: LabelStoreService,
               private timetableService: TimetableService) {
   }
 
   ngOnInit() {
     this.limit = 4;
+    this.labelStoreService.label = 'Search for green Transports';
   }
 
   searchFrom(event): void {

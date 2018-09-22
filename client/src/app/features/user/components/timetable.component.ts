@@ -4,6 +4,7 @@ import {TimetableModel} from '../model/timetable-model';
 import {TimetableService} from '../../../core/services/timetable.service';
 import {StationModel} from '../model/station.model';
 import {ConnectionsModel} from '../model/connections.model';
+import {LabelStoreService} from '../../../core/services/label-store.service';
 
 @Component({
   selector: 'ga-timetable',

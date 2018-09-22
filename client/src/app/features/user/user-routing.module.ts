@@ -7,11 +7,12 @@ import {UserAccomodationPageComponent} from './containers/user-accomodation-page
 import {UserChallengesPageComponent} from './containers/user-challenges-page.component';
 import {TimetableSearchComponent} from "./components/timetable.search.component";
 import {UserSettingsComponent} from './containers/user-settings.component';
+import {SuggestionsPageComponent} from './containers/suggestions-page.component';
 
 const routes: Routes = [
   {
     path: ':id/dashboard',
-    component: UserOverviewPageComponent
+    component: UserOverviewPageComponent,
   },
   {
     path: ':id/profile',
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: ':id/settings',
     component: UserSettingsComponent
+  },
+  {
+    path: ':id/suggestions',
+    component: SuggestionsPageComponent
   },
   {
     path: '**',
