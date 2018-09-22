@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "app/features/user/components/timetable";
 
+body {
+  margin: 0px;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
