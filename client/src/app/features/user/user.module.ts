@@ -7,7 +7,7 @@ import {UserWeeklyViewComponent} from './components/user-weekly-view.component';
 import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
-import {ButtonModule, CardModule, GMapModule, TabViewModule} from 'primeng/primeng';
+import {AutoCompleteModule, ButtonModule, CalendarModule, CardModule, TabViewModule} from 'primeng/primeng';
 import {ScoreViewComponent} from './components/score-view.component';
 import {UserProfilePageComponent} from './containers/user-profile-page.component';
 import {TimetableComponent} from './components/timetable.component';
@@ -16,6 +16,9 @@ import {UserChallengesPageComponent} from './containers/user-challenges-page.com
 import {UserProfileComponent} from './components/user-profile.component';
 import {AccomodationProfileComponent} from './components/accomodation-profile.component';
 import { CompetitorViewComponent } from './components/competitor-view.component';
+import {FormsModule} from '@angular/forms';
+import {TimetableSearchComponent} from './components/timetable.search.component';
+import {TimetableService} from '../../core/services/timetable.service';
 
 @NgModule({
   imports: [
@@ -26,7 +29,10 @@ import { CompetitorViewComponent } from './components/competitor-view.component'
     CardModule,
     TabViewModule,
     ButtonModule,
-    GMapModule
+    ButtonModule,
+    AutoCompleteModule,
+    FormsModule,
+    CalendarModule
   ],
   declarations: [
     UserProfilePageComponent,
@@ -39,10 +45,12 @@ import { CompetitorViewComponent } from './components/competitor-view.component'
     UserChallengesPageComponent,
     UserProfileComponent,
     AccomodationProfileComponent,
-    CompetitorViewComponent
+    CompetitorViewComponent,
+    AccomodationProfileComponent,
+    TimetableSearchComponent
   ],
   providers: [
-    UserService
+    UserService, TimetableService
   ]
 })
 export class UserModule {

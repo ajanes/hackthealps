@@ -18,4 +18,8 @@ export class UserService {
   getTimetable() {
     return this.http.get<TimetableModel>('http://localhost:3000/timetable');
   }
+
+  getStations() {
+    return this.http.get<any>('http://localhost:3000/stations');
+  }
 }
