@@ -6,6 +6,7 @@ import {TimetableComponent} from "./components/timetable.component";
 import {UserAccomodationPageComponent} from './containers/user-accomodation-page.component';
 import {UserChallengesPageComponent} from './containers/user-challenges-page.component';
 import {TimetableSearchComponent} from "./components/timetable.search.component";
+import {UserSettingsComponent} from './containers/user-settings.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: ':id/timetable',
     component: TimetableSearchComponent
+  },
+  {
+    path: ':id/settings',
+    component: UserSettingsComponent
   },
   {
     path: '**',
