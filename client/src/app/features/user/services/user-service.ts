@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {WeeklyView} from '../model/weekly-view';
 import {HttpClient} from '@angular/common/http';
+import {TimetableModel} from "../model/timetable-model";
 
 @Injectable()
 export class UserService {
@@ -14,4 +15,7 @@ export class UserService {
   }
 
 
+  getTimetable() {
+    return this.http.get<TimetableModel>('http://localhost:3000/timetable');
+  }
 }

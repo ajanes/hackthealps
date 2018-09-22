@@ -10,13 +10,16 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
             <a routerLink="/user/123/dashboard" (click)="close()">Dashboard</a>
           </li>
           <li>
-            <a routerLink="/user/123/profile" (click)="close()">Profile</a>
-          </li>
-          <li>
             <a routerLink="/user/123/challenges" (click)="close()">Challenges</a>
           </li>
           <li>
             <a routerLink="/user/123/accomodation" (click)="close()">Accomodation</a>
+          </li>
+          <li>
+            <a routerLink="/user/123/timetable" (click)="close()">Timetable</a>
+          </li>
+          <li>
+            <a routerLink="/user/123/profile" (click)="close()">Profile</a>
           </li>
         </ul>
         

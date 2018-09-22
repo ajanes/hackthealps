@@ -7,9 +7,12 @@ import {UserWeeklyViewComponent} from './components/user-weekly-view.component';
 import {UserDailyViewComponent} from './components/user-daily-view.component';
 import {UserService} from './services/user-service';
 import {ChartModule} from 'primeng/chart';
-import {ButtonModule, TabViewModule} from 'primeng/primeng';
+import {ButtonModule, CardModule, TabViewModule} from 'primeng/primeng';
 import { ScoreViewComponent } from './components/score-view.component';
 import { UserProfilePageComponent } from './containers/user-profile-page.component';
+import {TimetableComponent} from './components/timetable.component';
+import { UserAccomodationPageComponent } from './containers/user-accomodation-page.component';
+import { UserChallengesPageComponent } from './containers/user-challenges-page.component';
 
 @NgModule({
   imports: [
@@ -17,10 +20,11 @@ import { UserProfilePageComponent } from './containers/user-profile-page.compone
     UserRoutingModule,
 
     ChartModule,
+    CardModule,
     TabViewModule,
     ButtonModule
   ],
-  declarations: [UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, ScoreViewComponent, UserProfilePageComponent],
+  declarations: [UserProfilePageComponent, UserOverviewPageComponent, UserWeeklyViewComponent, UserDailyViewComponent, ScoreViewComponent, TimetableComponent, UserAccomodationPageComponent, UserChallengesPageComponent],
   providers: [
     UserService
   ]
